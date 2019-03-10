@@ -1,5 +1,6 @@
 import os
 print(os.getcwd())
+print(os.listdir())
 
 with open('todo.txt', 'w') as f:
     f.write('''
@@ -13,3 +14,12 @@ with open('todo.txt', 'r') as f:
     lines = f.readlines()
     for line in lines:
         print(line, end='')
+
+
+for foldername, subfolders, filenames in os.walk('/Users/cegemba/Desktop/practicePython'):
+	print('foldername: ' + foldername)
+	for subfolder in subfolders:
+		print('subfolder: ' +subfolder)
+	for file in filenames:
+		print('file is' +file)
+	print('')
